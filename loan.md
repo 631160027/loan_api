@@ -35,6 +35,7 @@
   - [x] [3.8 查看是否实名认证](#24-判断用户是不是会员)
   - [x] [3.9 实名认证接口](#24-判断用户是不是会员)
   - [x] [4.0 会员信息(开通后页面)](#24-判断用户是不是会员)
+  - [x] [4.1 查询历史报告](#41-查询历史报告)
 ------
 
 ### 1.新增接口
@@ -904,6 +905,7 @@ sample:
 ---|---|---|---
 token | 是 | String| 用户token
 memberBasicsId | 是 | Integer| 会员类型Id
+type | 是 | Integer|1:购买会员 2:单次查询报告
 ##### data出参
 
 参数名|非空|类型|说明
@@ -1068,5 +1070,36 @@ sample:
     },
     "timestamp": 1594004628666
 }
+```
+------
+#### 4.1 查询检测报告
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/memberYxsj/queryRightsLog.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询检测报告</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+token | 是 | String| 用户token
+
+
+##### data出参
+参数名|非空|类型|说明
+rightLog | 是 | String| 查询内容
+createTime | 是 | String| 创建时间
+rightsId | 是 | Integer| 1:黑名单 2:多头
+
+sample:
+```json
+
 ```
 ------
