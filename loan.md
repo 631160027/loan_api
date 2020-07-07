@@ -36,6 +36,7 @@
   - [x] [3.9 实名认证接口](#24-判断用户是不是会员)
   - [x] [4.0 会员信息(开通后页面)](#24-判断用户是不是会员)
   - [x] [4.1 查询历史报告](#41-查询历史报告)
+  - [x] [4.2 查询实名认证信息](#42-查询实名认证信息)
 ------
 
 ### 1.新增接口
@@ -1097,6 +1098,39 @@ token | 是 | String| 用户token
 rightLog | 是 | String| 查询内容
 createTime | 是 | String| 创建时间
 rightsId | 是 | Integer| 1:黑名单 2:多头
+
+sample:
+```json
+
+```
+------
+#### 4.2 查询实名认证信息
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/UserPortrait/queryUserCertificationInfo.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询实名认证信息</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+token | 是 | String| 用户token
+
+
+##### data出参
+参数名|非空|类型|说明
+flag | 是 | Integer| 1:已认证  2:未认证
+name | 是 | String| 姓名
+idCard | 是 | String| 身份证号
+mobile | 是 | String| 手机号
+id | 是 | Integer| 实名认证信息主键
 
 sample:
 ```json
