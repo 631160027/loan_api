@@ -37,6 +37,8 @@
   - [x] [4.0 会员信息(开通后页面)](#24-判断用户是不是会员)
   - [x] [4.1 查询历史报告](#41-查询历史报告)
   - [x] [4.2 查询实名认证信息](#42-查询实名认证信息)
+- [x] 4.[桔子API接口](#4桔子API接口)
+  - [x] [4.1 身份证正反面上传](#41-身份证正反面上传)
 ------
 
 ### 1.新增接口
@@ -1136,4 +1138,85 @@ sample:
 ```json
 
 ```
+------
+### 4.桔子API接口
+
+#### 4.1 身份证正反面上传
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/upload.htmlt</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>用户上传身份证正反面照片</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+MultipartFile | 是 | file| 正反面照片
+
+##### data出参
+
+参数名|非空|类型|说明
+---|---|---|---
+imgUrl | 是 | String| 图标地址
+content | 是 | String| 内容
+sample:
+```json
+  "data": [
+      {
+        "content": "会员包下款",
+        "imgUrl": "http://hyj-pro.oss-cn-shenzhen.aliyuncs.com//banner/img/1546597345872.jpg"
+      },
+      {
+        "content": "会员包下款",
+        "imgUrl": "http://hyj-pro.oss-cn-shenzhen.aliyuncs.com//banner/img/1546597345872.jpg"
+      }
+    ]
+```
+------
+#### 4.2 保存身份认证信息
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/saveIdentityAuthentication.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询检测报告</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+name | 是 | String| 姓名
+idCardNum | 是 | String| 用户身份证号
+idCardPositiveUrl | 是 | String| 身份证正面照片
+idCardBackUrl | 是 | String| 身份证反面照片
+address | 是 | String| 户籍地址
+validTime | 是 | String| 身份证有效期
+ethnicity | 是 | String| 民族
+birthday | 是 | String| 出生年月
+signingOrganization | 是 | String| 签证机关
+accurate | 是 | String| GPS定位的详细地址
+cityName | 是 | String| GPS定位的城市名称
+latitude | 是 | String| GPS定位的纬度
+longitude | 是 | String| GPS定位的经度
+logincode | 是 | String| 设备码
+livingImage1 | 是 | String| 活体照片1
+livingImage2 | 是 | String| 活体照片2
+sex | 是 | int| 性别 0女  1男
+
+##### data出参
+参数名|非空|类型|说明
+无
+
 ------
