@@ -41,6 +41,7 @@
   - [x] [4.1 身份证正反面上传](#41-身份证正反面上传)
   - [x] [4.2 保存身份认证信息](#42-保存身份认证信息)
   - [x] [4.3 产品详情](#43-产品详情)
+  - [x] [4.4 查询身份认证信息](#44-查询身份认证信息)
 ------
 
 ### 1.新增接口
@@ -1255,4 +1256,46 @@ loanNum | 是 | string| 下款人数
 dayMax | 是 | string| 最长期限
 loanTime | 是 | string| 下款时间单位分钟
 gongsiName | 是 | string| 公司名称
+------
+#### 4.4 查询身份认证信息
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/queryUserIdCard.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询身份认证信息</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+无
+
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+flag | 是 | int| 是否已认证 1:已认证 2:未认证
+info | 是 | json| flag=2时,此字段存在
+name | 是 | string| 姓名
+idCardNum | 是 | string| 身份证号
+sample:
+```json
+{
+    "code": 0,
+    "message": "成功",
+    "data": {
+        "flag":2,
+        "info": {
+            "name": "张三",
+            "idCardNum": "31000000000000"
+        }
+    },
+    "timestamp": 1594004628666
+}
+```
 ------
