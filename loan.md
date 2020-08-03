@@ -1358,7 +1358,8 @@ logincode | 是 | string| 设备码
 ##### data出参
 参数名|非空|类型|说明
 ---|---|---|---
-code | 是 | int| 0:允许注册 1:禁止注册
+isPass | 是 | boolean| true:允许准入 false:禁止准入
+reason | 是 | string| 审核备注信息
 ```json
 {
     "code": 0,
