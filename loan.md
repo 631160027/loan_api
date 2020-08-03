@@ -1309,7 +1309,7 @@ sample:
     </tr>
     <tr>
       <td>描述</td>
-      <td>查询身份认证信息</td>
+      <td>渠道用户注册</td>
     </tr>
   </tbody>
 </table>
