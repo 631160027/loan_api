@@ -42,6 +42,7 @@
   - [x] [4.2 保存身份认证信息](#42-保存身份认证信息)
   - [x] [4.3 产品详情](#43-产品详情)
   - [x] [4.4 查询身份认证信息](#44-查询身份认证信息)
+  - [x] [4.5 渠道用户注册](#44-渠道用户注册)
 ------
 
 ### 1.新增接口
@@ -1298,4 +1299,37 @@ sample:
     "timestamp": 1594004628666
 }
 ```
+------
+#### 4.5 渠道用户注册
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/submitUserBaseInfo.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询身份认证信息</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+productId | 是 | int| 产品Id
+applyPrice | 是 | int| 申请金额
+applyTerm | 是 | int| 申请期限
+gpsLng | 是 | string| GPS定位的经度
+gpsLat | 是 | string| GPS定位的纬度
+gpsAddress | 是 | string| GPS定位的详细地址
+gpsProvince | 是 | string| GPS定位的省名称
+gpsCity | 是 | string| GPS定位的城市名称
+gpsDistrict | 是 | string| GPS定位的县名称
+logincode | 是 | string| 设备码
+
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+无
 ------
