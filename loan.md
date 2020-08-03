@@ -39,6 +39,8 @@
   - [x] [4.2 查询实名认证信息](#42-查询实名认证信息)
 - [x] 4.[桔子API接口](#4桔子API接口)
   - [x] [4.1 身份证正反面上传](#41-身份证正反面上传)
+  - [x] [4.2 保存身份认证信息](#42-保存身份认证信息)
+  - [x] [4.3 产品详情](#43-产品详情)
 ------
 
 ### 1.新增接口
@@ -1219,4 +1221,38 @@ sex | 是 | int| 性别 0女  1男
 参数名|非空|类型|说明
 无
 
+------
+#### 4.3 产品详情
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/queryProductInfo.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>产品详情</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+productId | 是 | int| 产品Id
+
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+name | 是 | string| 产品名称
+productId | 是 | int| 产品Id
+imgUrl | 是 | string| logo
+adver | 是 | string| 广告语
+moneyMax | 是 | string| 最大金额
+moneyMin | 是 | string| 最小金额
+rateMin | 是 | string| 最低利率
+loanNum | 是 | string| 下款人数
+dayMax | 是 | string| 最长期限
+loanTime | 是 | string| 下款时间单位分钟
+gongsiName | 是 | string| 公司名称
 ------
