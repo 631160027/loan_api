@@ -45,6 +45,11 @@
   - [x] [4.5 渠道用户注册](#45-渠道用户注册)
   - [x] [4.6 用户准入接口](#46-用户准入接口)
   - [x] [4.7 查询默认绑卡接口](#47-查询默认绑卡接口)
+  - [x] [4.8 查询订单列表](#48-查询订单列表)
+  - [x] [4.9 接收绑卡验证码接口](#49-接收绑卡验证码接口)
+  - [x] [5.0 用户银行卡绑卡接口](#50-用户银行卡绑卡接口)
+  - [x] [5.1 查询用户额度](#51-查询用户额度)
+  - [x] [5.2 分期试算](#52-分期试算)
 ------
 
 ### 1.新增接口
@@ -1407,6 +1412,199 @@ bankName | 是 | string| 银行名称
       "isDefault":"Y",
       "bankName":"中国工商银行"
     }
+}
+```
+------
+#### 4.8 查询订单列表
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/queryOrderList.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询订单列表</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+flag | 是 | int| 订单状态 100:查询全部  0:审核中 4:带提现 5:待还款 6:已还款
+
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+productName | 是 | string| 产品名称
+applyTerm | 是 | int| 申请期限
+applyPrice | 是 | int| 申请金额
+status | 是 | int| 订单状态  0:审核中 1:审核失败 3:可重提 4:带提现
+orderNo | 是 | string| 订单编号
+```json
+{
+	"code": 0,
+	"message": "成功",
+	"data": {
+		"list": [{
+			"productName": "民生银行-助粒贷",
+			"applyTerm": 12,
+			"applyPrice": 50000,
+			"status": 0,
+			"id": 17
+		}]
+	},
+	"timestamp": 1596456152489
+}
+```
+------
+#### 4.9 接收绑卡验证码接口
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/confirmBindCard.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>接收绑卡验证码接口(点击提交绑卡触发)</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+serialNumber | 是 | string| 交易流水号
+verifyCode | 是 | string| 验证码
+
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+无
+------
+#### 5.0 用户银行卡绑卡接口
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/bindCard.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>提交用户银行卡信息,桔子系统发送验证码给手机号(绑卡第一步操作)</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+amount | 是 | int| 借款金额
+certNo | 是 | string| 身份证号
+cardNo | 是 | string| 银行卡号
+phoneNumber | 是 | string| 预留手机号
+orderNo | 是 | string| 订单编号
+period | 是 | int| 分期期数
+period | 是 | int| 分期期数
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+serialNumber | 是 | string| 交易流水号(接口绑卡成功返回)
+```json
+{
+	"code": 0,
+	"message": "成功",
+	"data": {
+		"serialNumber": "A18032318385232938997"
+	},
+	"timestamp": 1596456152489
+}
+```
+------
+#### 5.1 查询用户额度
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/queryAccountByChannelUid.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询用户额度</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+createTime | 是 | string| 开户日期
+hasUserAmount | 是 | boolean| 激活状态 true 正常，false 冻结
+totalAmount | 是 | string | 总授信额度
+userAmount | 是 | string| 可用额度
+```json
+{
+	"code": 0,
+	"message": "成功",
+	"data": {
+		"createTime": "2020-09-09 10:00:00",
+    "hasUserAmount": true,
+    "totalAmount": "20000",
+    "userAmount": "10000",
+	},
+	"timestamp": 1596456152489
+}
+```
+------
+#### 5.2 分期试算
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/bigTrial.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>分期试算</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+itemPrice | 是 | int| 试算金额
+applyTerm | 是 | int| 分期期数
+##### data出参
+参数名|非空|类型|说明
+---|---|---|---
+applyTerm | 是 | int| 分期期数
+interest | 是 | string| 月利息
+period | 是 | int | 月期数
+principal | 是 | string| 月本金
+repayDay | 是 | string| 本期还款日
+repayMoney | 是 | string| 本期总还
+```json
+{
+	"code": 0,
+	"message": "成功",
+	"data": {
+		"applyTerm": 12,
+    "interest": 30.00,
+		"period": 1,
+		"principal": 323.53,
+		"repayDay": "2019-11-18",
+	  "repayMoney": 353.53
+	},
+	"timestamp": 1596456152489
 }
 ```
 ------
