@@ -1364,7 +1364,11 @@ reason | 是 | string| 审核备注信息
 {
     "code": 0,
     "message": "成功",
-    "timestamp": 1594004628666
+    "timestamp": 1594004628666,
+    "data":{
+      "isPass":false,
+      "reason":"您不符合申请条件，请在产品管理申请其他产品"
+    }
 }
 ```
 ------
