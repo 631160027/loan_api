@@ -1543,6 +1543,7 @@ serialNumber | 是 | string| 交易流水号(接口绑卡成功返回)
 ---|---|---|---
 orderNo | 是 | string| 订单编号
 ##### data出参
+
 参数名|非空|类型|说明
 ---|---|---|---
 createTime | 是 | string| 开户日期
@@ -1584,6 +1585,7 @@ orderNo | 是 | string| 订单编号
 itemPrice | 是 | int| 试算金额
 applyTerm | 是 | int| 分期期数
 ##### data出参
+
 参数名|非空|类型|说明
 ---|---|---|---
 applyTerm | 是 | int| 分期期数
