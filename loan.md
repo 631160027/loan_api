@@ -1283,7 +1283,7 @@ gongsiName | 是 | string| 公司名称
 参数名|非空|类型|说明
 ---|---|---|---
 flag | 是 | int| 是否已认证 1:已认证 2:未认证
-info | 是 | json| flag=2时,此字段存在
+info | 是 | json| flag=1时,此字段存在
 name | 是 | string| 姓名
 idCardNum | 是 | string| 身份证号
 sample:
