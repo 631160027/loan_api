@@ -1639,8 +1639,6 @@ gpsProvince | 是 | string| 设备-GPS省
 gpsCity | 是 | string| 当前设备-GPS市
 gpsDistrict | 是 | string| 当前设备-GPS区
 gpsCityCode | 是 | int| 当前设备-GPS市Code
-gpsDistrictCode | 是 | int| 当前设备-GPS区Code
-gpsProvinceCode | 是 | int| 设备-GPS省Code
 ##### data出参
 
 参数名|非空|类型|说明
