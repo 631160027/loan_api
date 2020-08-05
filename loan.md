@@ -1447,11 +1447,18 @@ status | 是 | int| 订单状态  0:审核中 1:审核失败 3:可重提 4:带�
 orderNo | 是 | string| 订单编号
 logoUrl | 是 | string| logo地址
 createTime | 是 | string| 订单创建时间
+productName | 是 | string| 产品名称
+surplusPayment | 是 | string| 剩余还款金额
+currentlyAvailable | 是 | string| 当前可借
+submitPrice | 是 | string| 合计借款金额
 ```json
 {
 	"code": 0,
 	"message": "成功",
 	"data": {
+    "submitPrice":"1000",
+    "surplusPayment":"1000",
+    "currentlyAvailable":"1000",
 		"list": [{
 			"productName": "民生银行-助粒贷",
 			"applyTerm": 12,
