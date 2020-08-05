@@ -52,6 +52,7 @@
   - [x] [5.2 分期试算](#52-分期试算)
   - [x] [5.3 提交借款订单接口](#53-提交借款订单接口)
   - [x] [5.4 查询还款计划](#54-查询还款计划)
+  - [x] [5.5 主动还款](#55-主动还款)
 ------
 
 ### 1.新增接口
@@ -1691,91 +1692,127 @@ allRestRepay | 是 | Bigdecimal| 本金+利息+逾期费 本金+利息+逾期费
 	"message": "成功",
 	"orderState": 1,
 	"data": {
-		 "list":[{
-	"actualPeriod": 6,
-	"allRestRepay": 922.99,
-	"amount": 5000,
-	"interest": 150,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 1,
-	"principal": 772.99,
-	"repaidAmount": 0,
-	"repayDay": "2020-09-04",
-	"repayMoney": 922.99,
-	"state": 0
-}, {
-	"actualPeriod": 6,
-	"allRestRepay": 922.99,
-	"amount": 5000,
-	"interest": 126.81,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 2,
-	"principal": 796.18,
-	"repaidAmount": 0,
-	"repayDay": "2020-10-04",
-	"repayMoney": 922.99,
-	"state": 0
-}, {
-	"actualPeriod": 6,
-	"allRestRepay": 922.99,
-	"amount": 5000,
-	"interest": 102.93,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 3,
-	"principal": 820.06,
-	"repaidAmount": 0,
-	"repayDay": "2020-11-04",
-	"repayMoney": 922.99,
-	"state": 0
-}, {
-	"actualPeriod": 6,
-	"allRestRepay": 922.99,
-	"amount": 5000,
-	"interest": 78.33,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 4,
-	"principal": 844.66,
-	"repaidAmount": 0,
-	"repayDay": "2020-12-04",
-	"repayMoney": 922.99,
-	"state": 0
-}, {
-	"actualPeriod": 6,
-	"allRestRepay": 922.99,
-	"amount": 5000,
-	"interest": 52.99,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 5,
-	"principal": 870,
-	"repaidAmount": 0,
-	"repayDay": "2021-01-04",
-	"repayMoney": 922.99,
-	"state": 0
-}, {
-	"actualPeriod": 6,
-	"allRestRepay": 922.97,
-	"amount": 5000,
-	"interest": 26.86,
-	"orderId": "20080515050416273198",
-	"overDueDay": 0,
-	"overDueFee": 0,
-	"period": 6,
-	"principal": 896.11,
-	"repaidAmount": 0,
-	"repayDay": "2021-02-04",
-	"repayMoney": 922.97,
-	"state": 0
-}]
+		"list": [{
+			"actualPeriod": 6,
+			"allRestRepay": 922.99,
+			"amount": 5000,
+			"interest": 150,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 1,
+			"principal": 772.99,
+			"repaidAmount": 0,
+			"repayDay": "2020-09-04",
+			"repayMoney": 922.99,
+			"state": 0
+		}, {
+			"actualPeriod": 6,
+			"allRestRepay": 922.99,
+			"amount": 5000,
+			"interest": 126.81,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 2,
+			"principal": 796.18,
+			"repaidAmount": 0,
+			"repayDay": "2020-10-04",
+			"repayMoney": 922.99,
+			"state": 0
+		}, {
+			"actualPeriod": 6,
+			"allRestRepay": 922.99,
+			"amount": 5000,
+			"interest": 102.93,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 3,
+			"principal": 820.06,
+			"repaidAmount": 0,
+			"repayDay": "2020-11-04",
+			"repayMoney": 922.99,
+			"state": 0
+		}, {
+			"actualPeriod": 6,
+			"allRestRepay": 922.99,
+			"amount": 5000,
+			"interest": 78.33,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 4,
+			"principal": 844.66,
+			"repaidAmount": 0,
+			"repayDay": "2020-12-04",
+			"repayMoney": 922.99,
+			"state": 0
+		}, {
+			"actualPeriod": 6,
+			"allRestRepay": 922.99,
+			"amount": 5000,
+			"interest": 52.99,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 5,
+			"principal": 870,
+			"repaidAmount": 0,
+			"repayDay": "2021-01-04",
+			"repayMoney": 922.99,
+			"state": 0
+		}, {
+			"actualPeriod": 6,
+			"allRestRepay": 922.97,
+			"amount": 5000,
+			"interest": 26.86,
+			"orderId": "20080515050416273198",
+			"overDueDay": 0,
+			"overDueFee": 0,
+			"period": 6,
+			"principal": 896.11,
+			"repaidAmount": 0,
+			"repayDay": "2021-02-04",
+			"repayMoney": 922.97,
+			"state": 0
+		}]
+	}
+}
+```
+------
+#### 5.5 主动还款
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/getRepaymentAddress.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>主动还款</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+period | 是 | int| 还款期数
+##### data出参
+
+参数名|非空|类型|说明
+---|---|---|---
+repaymentAddress | 是 | Integer| 还款页面地址
+
+```json
+{
+	"code": "0",
+	"message": "成功",
+	"orderState": 1,
+	"data": {
+		"repaymentAddress":"http://xxxxxx.html"
 	}
 }
 ```
