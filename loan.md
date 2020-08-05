@@ -1672,6 +1672,7 @@ orderNo | 是 | string| 订单编号
 
 参数名|非空|类型|说明
 ---|---|---|---
+orderState | 是 | Integer| 订单总状态 0正常，10取消，20逾期， 40 结清
 actualPeriod | 是 | Integer| 账单总期数
 amount | 是 | Bigdecimal| 账单总本金
 orderId | 是 | String| 桔子订单号
@@ -1682,4 +1683,62 @@ principal | 是 | Bigdecimal| 当期本金
 repayDay | 是 | String| 当期应还日(2018-09-08)
 repayMoney | 是 | Bigdecimal| 当期应还金额
 repaidTime | 是 | String| 当期实还日期
+```json
+{
+	"code": "0",
+	"message": "成功",
+	"orderState": 1,
+	"list": {
+		"channelId": 999,
+		"orderNo": "11111111111111",
+		"orderState": 0,
+		"repayPlanList": [{
+				"actualPeriod": 3,
+				"allRestRepay": 3535.30,
+				"amount": 10000.00,
+				"interest": 202.94,
+				"orderId": "2222222222222222",
+				"overDueDay": 0,
+				"overDueFee": 0.00,
+				"period": 1,
+				"principal": 3332.36,
+				"repaidAmount": 0.00,
+				"repayDay": "2019-11-17",
+				"repayMoney": 3535.30,
+				"state": 0
+			},
+			{
+				"actualPeriod": 3,
+				"allRestRepay": 3535.30,
+				"amount": 10000.00,
+				"interest": 202.94,
+				"orderId": "2222222222222222",
+				"overDueDay": 0,
+				"overDueFee": 0.00,
+				"period": 2,
+				"principal": 3332.36,
+				"repaidAmount": 0.00,
+				"repayDay": "2019-12-17",
+				"repayMoney": 3535.30,
+				"state": 0
+			},
+			{
+				"actualPeriod": 3,
+				"allRestRepay": 3535.30,
+				"amount": 10000.00,
+				"interest": 102.96,
+				"orderId": "2222222222222222",
+				"overDueDay": 0,
+				"overDueFee": 0.00,
+				"period": 3,
+				"principal": 3432.34,
+				"repaidAmount": 0.00,
+				"repayDay": "2020-01-17",
+				"repayMoney": 3535.30,
+				"state": 0
+			}
+		]
+	}
+}
+```
 ------
