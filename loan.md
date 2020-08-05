@@ -1267,6 +1267,7 @@ loanNum | 是 | string| 下款人数
 dayMax | 是 | string| 最长期限
 loanTime | 是 | string| 下款时间单位分钟
 gongsiName | 是 | string| 公司名称
+borrowingCause | 是 | string| 借款原因
 ------
 #### 4.4 查询身份认证信息
 <table>
