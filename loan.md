@@ -1688,11 +1688,8 @@ repaidTime | 是 | String| 当期实还日期
 	"code": "0",
 	"message": "成功",
 	"orderState": 1,
-	"list": {
-		"channelId": 999,
-		"orderNo": "11111111111111",
-		"orderState": 0,
-		"repayPlanList": [{
+	"data": {
+		 "list":[{
 				"actualPeriod": 3,
 				"allRestRepay": 3535.30,
 				"amount": 10000.00,
