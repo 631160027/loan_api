@@ -1614,3 +1614,37 @@ repayMoney | 是 | string| 本期总还
 }
 ```
 ------
+#### 5.3 提交借款订单接口
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/submitLoanOrder.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>提交借款订单接口</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+gpsLng | 是 | string| 当前设备-GPS经度
+gpsLat | 是 | string| 当前设备-GPS纬度
+gpsAddress | 是 | string| 当前设备-GPS详细地址
+gpsProvince | 是 | string| 设备-GPS省
+gpsCity | 是 | string| 当前设备-GPS市
+gpsDistrict | 是 | string| 当前设备-GPS区
+gpsCityCode | 是 | int| 当前设备-GPS市Code
+gpsDistrictCode | 是 | int| 当前设备-GPS区Code
+gpsProvinceCode | 是 | int| 设备-GPS省Code
+##### data出参
+
+参数名|非空|类型|说明
+---|---|---|---
+无
+
+------
