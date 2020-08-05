@@ -1639,6 +1639,8 @@ gpsProvince | 是 | string| 设备-GPS省
 gpsCity | 是 | string| 当前设备-GPS市
 gpsDistrict | 是 | string| 当前设备-GPS区
 gpsCityCode | 是 | int| 当前设备-GPS市Code
+submitPrice | 是 | int| 提交金额
+submitTerm | 是 | int| 提交期限
 ##### data出参
 
 参数名|非空|类型|说明
