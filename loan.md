@@ -51,6 +51,7 @@
   - [x] [5.1 查询用户额度](#51-查询用户额度)
   - [x] [5.2 分期试算](#52-分期试算)
   - [x] [5.3 提交借款订单接口](#53-提交借款订单接口)
+  - [x] [5.4 查询还款计划](#54-查询还款计划)
 ------
 
 ### 1.新增接口
@@ -1648,4 +1649,37 @@ submitTerm | 是 | int| 提交期限
 ---|---|---|---
 无
 
+------
+#### 5.4 查询还款计划
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/queryRepayPlansInfo.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>查询还款计划</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 订单编号
+##### data出参
+
+参数名|非空|类型|说明
+---|---|---|---
+actualPeriod | 是 | Integer| 账单总期数
+amount | 是 | Bigdecimal| 账单总本金
+orderId | 是 | String| 桔子订单号
+period | 是 | Integer| 当期期数
+state | 是 | Integer| 当期状态 0 未还 1 已还 2 提前还 10 逾期
+interest | 是 | Bigdecimal| 当期利息
+principal | 是 | Bigdecimal| 当期本金
+repayDay | 是 | String| 当期应还日(2018-09-08)
+repayMoney | 是 | Bigdecimal| 当期应还金额
+repaidTime | 是 | String| 当期实还日期
 ------
