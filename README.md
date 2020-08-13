@@ -3477,8 +3477,8 @@ sample:
 </table>
 
 ##### data入参
-
 参数名|非空|类型|说明
+---|---|---|---
 productId | 是 | int| 产品名称Id
 receivablesSubjectId | 是 | int| 支付公司Id 全部传0
 type | 是 | int|  0 全部 2 充值 3:退费
