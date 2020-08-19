@@ -53,6 +53,7 @@
   - [x] [5.3 提交借款订单接口](#53-提交借款订单接口)
   - [x] [5.4 查询还款计划](#54-查询还款计划)
   - [x] [5.5 主动还款](#55-主动还款)
+  - [x] [5.6 重新提现](#56-重新提现)
 ------
 
 ### 1.新增接口
@@ -1453,6 +1454,7 @@ productName | 是 | string| 产品名称
 surplusPayment | 是 | string| 剩余还款金额
 currentlyAvailable | 是 | string| 当前可借
 submitPrice | 是 | string| 合计借款金额
+flag | 是 | int| 该字段只会在status=11时返回,当flag=1时前端需要显示重新提现按钮
 ```json
 {
 	"code": 0,
@@ -1655,6 +1657,7 @@ gpsDistrict | 是 | string| 当前设备-GPS区
 gpsCityCode | 是 | int| 当前设备-GPS市Code
 submitPrice | 是 | int| 提交金额
 submitTerm | 是 | int| 提交期限
+isAgain | 是 | int| 默认值:1 (重新提现必传 orderNo传重新提现接口返回的新订单号)
 ##### data出参
 
 参数名|非空|类型|说明
@@ -1824,6 +1827,41 @@ repaymentAddress | 是 | Integer| 还款页面地址
 	"orderState": 1,
 	"data": {
 		"repaymentAddress":"http://xxxxxx.html"
+	}
+}
+```
+------
+#### 5.6 重新提现
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/jz/againWithdrawal.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>重新提现</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 入参
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 旧订单编号
+##### data出参
+
+参数名|非空|类型|说明
+---|---|---|---
+orderNo | 是 | string| 新订单编号
+
+```json
+{
+	"code": "0",
+	"message": "成功",
+	"orderState": 1,
+	"data": {
+		"orderNo":"11111111111111111"
 	}
 }
 ```
