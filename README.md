@@ -103,6 +103,7 @@
   - [x] [11.5 查询子模块列表](#115-查询子模块列表)
   - [x] [11.6 新增字段](#116-新增字段)
   - [x] [11.7 新增会员基础信息](#117-新增会员基础信息)
+  - [x] [11.8 新增打款or编辑打款](#118-新增打款or编辑打款)
 ------
 
 ### 1.登录
@@ -3513,4 +3514,38 @@ sample:
   "timestamp": 1586672660878
 }
 ```
+------
+#### 11.8 新增打款or编辑打款
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/Android/insertPayLog.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>新增打款or编辑打款</td>
+    </tr>
+  </tbody>
+</table>
+
+##### data入参
+参数名|非空|类型|说明
+---|---|---|---
+payMoney | 是 | string| 打款金额
+payTime | 是 | string| 打款时间 格式:2020-02-02 00:00:00(小时分钟秒都为00)
+payGongsiId | 是 | int|  支付公司Id
+payGongsiName | 是 | string| 支付公司名称
+receiveGongsiId | 是 | int| 收款公司Id
+receiveGongsiName | 是 | string| 收款公司名称
+id | 否 | int| 主键  ****新增不要传key 编辑必须传key
+remark | 是 | string| 编辑
+
+##### 出参
+参数名|非空|类型|说明
+---|---|---|---
+无
+
+
+
 ------
