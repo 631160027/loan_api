@@ -104,6 +104,7 @@
   - [x] [11.6 新增字段](#116-新增字段)
   - [x] [11.7 新增会员基础信息](#117-新增会员基础信息)
   - [x] [11.8 新增打款or编辑打款](#118-新增打款or编辑打款)
+  - [x] [11.9 打款记录列表](#119-打款记录列表)
 ------
 
 ### 1.登录
@@ -3546,6 +3547,59 @@ remark | 是 | string| 编辑
 ---|---|---|---
 无
 
+------
+------
+#### 11.9 打款记录列表
+<table>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>/Android/queryPayLogList.html</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>打款记录列表</td>
+    </tr>
+  </tbody>
+</table>
+
+##### data入参
+参数名|非空|类型|说明
+---|---|---|---
+startTime | 是 | string| 开始时间
+endTime | 是 | string| 结束时间
+receiveGongsiId | 是 | int|  收款公司ID 全部传0
 
 
+##### 出参
+参数名|非空|类型|说明
+---|---|---|---
+time | 是 | string| 时间
+id | 是 | int| 主键(编辑回传)
+receiveGongsiName | 是 | string|  收款公司名称
+payGongsiName | 是 | string|  支付公司名称
+payMoney | 是 | string|  打款
+remark | 是 | string|  备注
+cz | 是 | string|  充值
+ystk | 是 | string|  应收退款
+sstk | 是 | string|  实收退款
+ye | 是 | string|  余额
+totalCz | 是 | string|  总充值
+totalYstk | 是 | string|  总应收退款
+totalSstk | 是 | string|  总应实收退款
+totalDk | 是 | string|  总打款
+totalYe | 是 | string|  总余额
+```json
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+      list:[],
+      count:100,
+      total:{}
+  },
+  "timestamp": 1586672660878
+}
+```
+------
 ------
